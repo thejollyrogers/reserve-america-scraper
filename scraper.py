@@ -2,16 +2,21 @@
 
 import os
 import sys
+from os.path import join, dirname, exists
 
 try:
     import mechanize
     from bs4 import BeautifulSoup
     from twilio.rest import Client
+    from dotenv import load_dotenv, find_dotenv
 except ImportError:
     print('Unable to import necessary packages!')
     sys.exit(-1)
 
 # Configuration
+dotenv_path = join(dirname(__file__), '.env')
+if exists(dotenv_path):
+    load_dotenv(dotenv_path)
 date = os.environ['DATE']
 length_of_stay = os.environ['LENGTH']
 url = os.environ['CAMPGROUND']

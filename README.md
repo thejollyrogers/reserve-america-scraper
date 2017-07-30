@@ -16,6 +16,13 @@ Run the script with a few environment variables like so:
 > ./scraper.py
 ```
 
+Alternatively, create a `.env` file with your environment variables as key value pairs.
+```txt
+CAMPGROUND="https://www.reserveamerica.com/camping/big-basin-redwoods-sp/r/campgroundDetails.do?contractCode=CA&parkId=120009"
+LENGTH=2
+DATE="04/14/2017
+```
+
 Then the scraper will search the given campsite for the date with the length of stay.
 
 Or, you can set up the script to run under cron, and notify you on macOS using the provided [`cron.sh`](./cron.sh) script.
